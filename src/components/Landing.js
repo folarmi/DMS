@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import eyeClosed from "../assets/eyeClosed.svg";
 import eyeOpened from "../assets/eyeOpen.svg";
+import logo from "../assets/logo.svg";
 import Banner from "../atoms/Banner";
 import Input from "../atoms/Input";
 
@@ -14,33 +15,29 @@ const Landing = () => {
   return (
     <div className="bg-ash p-4">
       <div className="m-auto w-10/12 ">
-        <section className="flex">
+        <div className="flex items-center">
+          <img src={logo} alt="logo" className="mr-2" />
+          <p className="font-bold text-xl">DMS</p>
+        </div>
+        <section className="md:flex">
           <Banner />
 
           <div className="bg-white m-6 rounded-lg p-8" style={{ flex: "1" }}>
+            <section className="flex pb-10">
+              <div className="bg-primary w-64 h-2 rounded-md"></div>
+              <div className="bg-ash h-2 w-48 rounded-r-md"></div>
+            </section>
             <p className="font-bold text-2xl pb-2">Basic Information</p>
             <p className="pb-10 text-sm">
               Enter the following information below
             </p>
             <form>
-              <div className="flex mb-6 justify-between">
-                <section className="rounded-md">
-                  <div>
-                    <div className="input-box border border-yellow-500">
-                      <label className="text-xs text-primary label-text absolute">
-                        Your company email
-                      </label>
-                      <input
-                        className="p-2 outline-none w-full text-base"
-                        type="text"
-                        id="email"
-                        name="email"
-                        placeholder="FZ Logistics"
-                      />
-                    </div>
-                  </div>
-                </section>
-
+              <div className="flex justify-between">
+                <Input
+                  placeholder="FZ logistics"
+                  label="FZ logistics"
+                  type="text"
+                />
                 <Input placeholder="Last Name" label="Last Name" type="text" />
               </div>
               <Input
@@ -84,7 +81,10 @@ const Landing = () => {
             </form>
             <div className="flex justify-between items-center w-full py-8">
               <p className="text-sm">
-                Got an account? <span className="text-primary">Sign in</span>
+                Got an account?{" "}
+                <Link to="/login" className="text-primary">
+                  Sign in
+                </Link>
               </p>
               <Link to="/login">
                 <button className="text-white bg-primary rounded-lg py-4 px-6 font-bold text-sm">

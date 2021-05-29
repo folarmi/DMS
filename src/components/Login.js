@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import eyeClosed from "../assets/eyeClosed.svg";
 import eyeOpened from "../assets/eyeOpen.svg";
+import logo from "../assets/logo.svg";
 import Banner from "../atoms/Banner";
 import Input from "../atoms/Input";
 
@@ -12,8 +13,12 @@ const Login = () => {
     setPasswordShown(passwordShown ? false : true);
   };
   return (
-    <div className="bg-ash">
-      <div className="m-auto w-10/12 ">
+    <div className="bg-ash pb-20">
+      <div className="m-auto w-10/12">
+        <div className="flex items-center mt-4">
+          <img src={logo} alt="logo" className="mr-2" />
+          <p className="font-bold text-xl">DMS</p>
+        </div>
         <section className="flex ">
           <Banner />
 
@@ -55,7 +60,9 @@ const Login = () => {
             <div className="flex justify-between items-center w-full py-8">
               <p className="text-sm">
                 Just joining us here?{" "}
-                <span className="text-primary"> Register Now</span>
+                <Link to="/" className="text-primary">
+                  Register Now
+                </Link>
               </p>
 
               <Link to="/">

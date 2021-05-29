@@ -8,7 +8,7 @@ const Banner = () => {
       <div className="flex justify-center">
         <img src={deliveryMan} alt="deliveryMan" className="w-24 pb-10" />
       </div>
-      <p className="text-3xl font-medium">
+      <p className="text-3xl font-extrabold leading-10">
         Let’s help you manage your riders and delivery systems.
       </p>
       <p className="text-sm py-6">
